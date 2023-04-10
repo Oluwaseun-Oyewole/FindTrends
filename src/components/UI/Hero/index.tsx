@@ -8,10 +8,9 @@ import { AiTwotoneFire } from "react-icons/ai";
 const HeroParent = styled.div`
   // ${tw`font-Quicksand`}
 `;
-const HeroHeading = styled.h1``;
-const HeroParagraph = styled.p``;
+
 const HeroContainer = styled.div`
-  ${tw`pt-14 flex flex-col items-center justify-center gap-[50px] lg:gap-[65px]`}
+  ${tw`pt-14 flex flex-col items-center justify-center gap-[50px] lg:gap-[65px] md:pb-14`}
 `;
 const HeroContent = styled.div`
   ${tw`flex flex-col items-center justify-center`}
@@ -65,6 +64,9 @@ export const Hero = () => {
                 background="#A8FF35"
                 color="#000"
                 fontWeight={900}
+                padding={true}
+                paddingvalues="14px 35px"
+                fontSize={true}
               />
               <ButtonImage src="/assets/img/img-hero.png" alt="button image" />
             </ButtonImageContainer>

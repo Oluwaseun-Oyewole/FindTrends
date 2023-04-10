@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "../../components";
 import { CustomTabComponent } from "../../components/Tab";
 import { FaceBook } from "./Facebook";
 import { Twitter } from "./Twitter";
@@ -12,7 +11,7 @@ import { BsFacebook, BsTwitter, BsPinterest, BsLinkedin } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 
 const TabContainer = styled.div`
-  ${tw`bg-gray-50 text-black font-satoshi font-medium`}
+  ${tw`bg-gray-50 text-black font-satoshi font-medium pb-20`}
 `;
 
 const TabHeader = styled.h1`

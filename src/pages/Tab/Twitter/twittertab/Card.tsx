@@ -20,7 +20,7 @@ const TwitterCardLinks = styled.div`
 const TwitterImage = styled.img`
   ${tw`w-[45px] h-[40px] rounded-full`}
 `;
-const TwitterTime = styled.span``;
+
 const TwitterCardDescription = styled.p`
   ${tw`text-sm py-2 text-black`}
 `;

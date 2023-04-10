@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { BsTwitter } from "react-icons/bs";
@@ -103,16 +103,6 @@ const twitterdata = [
 
 export const Twitter = () => {
   const [scroll, setScroll] = useState(true);
-
-  const changeBackground = () => {
-    if (window.pageYOffset >= 50) {
-      setScroll(true);
-    } else {
-      setScroll(false);
-    }
-
-    console.log("page Offset:", window.pageYOffset);
-  };
 
   return (
     <div className="w-full">

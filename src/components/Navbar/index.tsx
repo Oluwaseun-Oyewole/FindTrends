@@ -8,11 +8,12 @@ import { Container } from "../index";
 import { animateScroll } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-const Nav = styled.div<{ scrollNavbar?: boolean }>`
-  ${tw` py-5 font-Quicksand font-medium w-full`}
+const Nav = styled.div<{ scrollNavbar?: boolean; scrollPast?: boolean }>`
+  ${tw` py-5 font-Quicksand font-medium w-full md:pt-8`}
   backdrop-filter: ${({ scrollNavbar }) => scrollNavbar && "blur(10px)"};
   position: fixed;
   z-index: 99999;
+  background: ${({ scrollPast }) => scrollPast && "#000"};
 `;
 const NavbarController = styled.div`
   ${tw`flex justify-between items-center`}
@@ -59,6 +60,8 @@ export const Navbar = () => {
 
   const [click, setClick] = useState(false);
   const [scrollNavbar, setScrollbar] = useState(false);
+  const [scrollPast, setScrollPast] = useState(false);
+
   const handleClick = (): void => {
     setClick(!click);
   };
@@ -66,9 +69,13 @@ export const Navbar = () => {
   const changeBackground = () => {
     if (window.pageYOffset >= 50) {
       setScrollbar(true);
+      setScrollPast(true);
     } else {
       setScrollbar(false);
+      setScrollPast(false);
     }
+
+    console.log("page offset", window.pageYOffset);
   };
 
   useEffect(() => {
@@ -76,7 +83,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <Nav scrollNavbar={scrollNavbar}>
+    <Nav scrollNavbar={scrollNavbar} scrollPast={scrollPast}>
       <Container>
         <NavbarController>
           <NavbarLogoContainer onClick={toggleHome}>
@@ -112,6 +119,8 @@ export const Navbar = () => {
               children="Login"
               onClick={() => null}
               background="transparent"
+              padding={true}
+              paddingvalues="10px 35px"
             />
             <Button
               type="button"
@@ -119,6 +128,8 @@ export const Navbar = () => {
               onClick={() => null}
               background="#fff"
               color="#000"
+              padding={true}
+              paddingvalues="10px 35px"
             />
           </NavbarButtonContainer>
         </NavbarController>

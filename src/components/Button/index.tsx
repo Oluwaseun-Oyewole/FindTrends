@@ -9,7 +9,7 @@ type props = {
   className?: string;
   background?: string;
   color?: string;
-  onClick: () => void;
+  onClick?: () => void;
   icon?: React.ReactElement;
   padding?: boolean;
   fontWeight?: number;
