@@ -69,9 +69,6 @@ export const Follow = () => {
           </button>
         </div>
 
-        {/* <div className="text-twitter w-[150px] h-[100px] absolute -bottom-20 left-20 shadow-2xl flex items-center justify-center z-10 text-xs">
-     Seun 2020
-   </div> */}
         <p className="text-twitter text-sm pb-5">Show more</p>
       </div>
 

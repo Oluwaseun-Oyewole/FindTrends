@@ -74,8 +74,6 @@ export const Navbar = () => {
       setScrollbar(false);
       setScrollPast(false);
     }
-
-    console.log("page offset", window.pageYOffset);
   };
 
   useEffect(() => {

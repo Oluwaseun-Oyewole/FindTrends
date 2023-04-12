@@ -66,3 +66,14 @@ export const dealsdata = [
     primary: false,
   },
 ];
+
+export type footerProp = {
+  title?: string;
+  link?: string;
+};
+export const footerlinks: Array<footerProp> = [
+  { title: "Privacy Policy", link: "privacypolicy" },
+  { title: "Terms and Conditions", link: "termsandcondition" },
+  { title: "Contact Us", link: "contactUs" },
+  { title: "Careers", link: "careers" },
+];
