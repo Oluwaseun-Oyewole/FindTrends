@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { LeftSection } from "./Left";
+import { RightSection } from "./Right";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { MiddleCard } from "./MiddleCard";
@@ -31,7 +32,7 @@ export const CardSections = () => {
     <CardContainer className="max-w-[1250px] mx-auto">
       <LeftSection />
       <MiddleCard />
-      <div className="bg-green-300">Right Section</div>
+      <RightSection/>
     </CardContainer>
   );
 };
