@@ -45,7 +45,7 @@ export const LeftSection = () => {
     <>
       <Section className="relative">
         <div></div>
-        <div className="shadow-lg ">
+        <div className="shadow-lg bg-white">
           <div className="flex flex-col items-center ">
             <img
               src="/assets/img/Bg-hero.png"

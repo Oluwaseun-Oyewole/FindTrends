@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { HiPhoto } from "react-icons/hi2";
-import { RiVideoFill, RiArticleFill } from "react-icons/ri";
 import { BsFillCalendarDateFill } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import { MdOutlineArrowDropDown } from "react-icons/md";
@@ -10,7 +9,7 @@ import { FiMoreHorizontal } from "react-icons/fi";
 import { AiTwotoneVideoCamera } from "react-icons/ai";
 import { BsClock } from "react-icons/bs";
 import { BiMessageDots } from "react-icons/bi";
-import { ContextProvider } from "../../../components/context/ContextProvider";
+import { ModalContext } from "../../../components/store/ModalContext";
 
 const cardinfo = [
   {
@@ -44,9 +43,7 @@ const cardinfo = [
 export const Modal = () => {
   const [disable, setDisable] = useState(true);
   const [text, setText] = useState("");
-
-  const modalValue = useContext(ContextProvider);
-  //   console.log("modalValue: ", modalValue.modal);
+  const { handleModalOpening } = useContext(ModalContext);
 
   const handleChange = (e: any) => {
     setText(e.target.value);
@@ -57,23 +54,23 @@ export const Modal = () => {
     }
   };
 
-  const handleModal = () => {
-    // modalValue.setModal(false);
-  };
-
   const handleClick = () => {
     setText("");
+    setDisable(true);
   };
   return (
-    <div className="absolute min-h-[150vh] overflow-hidden w-full bg-black opacity-100 text-white  flex z-[100] justify-center">
-      <div className="mt-5 bg-white text-black w-[50%] h-[70%] py-3">
-        <div>
-          <div className="flex items-center justify-between text-xl pb-3 px-7 pt-1">
+    <>
+      <div className="fixed top-0 left-0 min-h-screen w-full bg-black opacity-80 text-white  flex justify-center z-10"></div>
+
+      <div className="w-full h-full flex items-center justify-center absolute left-0 z-[1000]">
+        <div className="text-black min-h-[70%] w-[50%] bg-white rounded-lg">
+          <div className="flex items-center justify-between text-xl pb-3 px-7 py-3">
             <p className=" text-black font-medium">Create a post</p>
             <span className="hover:bg-gray-200 px-2 py-2 hover:rounded-full transition-all ease-in-out duration-500 cursor-pointer">
-              <AiOutlineClose />
+              <AiOutlineClose onClick={handleModalOpening} />
             </span>
           </div>
+
           <div>
             <div className="flex items-center pt-7 gap-3 border-t-2 border-gray-200 px-7">
               <img
@@ -161,6 +158,6 @@ export const Modal = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

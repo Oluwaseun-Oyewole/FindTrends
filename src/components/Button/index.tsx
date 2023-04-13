@@ -60,8 +60,6 @@ export const Button: FC<props> = ({
   paddingvalues,
   opacity,
 }) => {
-  // console.log(fontSize);
-
   return (
     <ButtonStyles
       type={type}

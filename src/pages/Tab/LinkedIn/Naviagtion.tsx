@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsLinkedin } from "react-icons/bs";
 import { MdWork, MdBusiness } from "react-icons/md";
 import { RiMessage2Fill, RiArrowDropDownFill } from "react-icons/ri";
@@ -8,22 +8,23 @@ import { IoMdNotifications } from "react-icons/io";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { FcBusiness } from "react-icons/fc";
+import { SearchFormModal } from "./SearchFormModal";
 
 const NavigationLink = styled.div`
   ${tw`border-r-2 border-gray-300`}
 `;
 
 const NavigationContainer = styled.div`
-  ${tw`flex items-center  h-[80px] sticky top-0 z-10 bg-white`}
+  ${tw`flex items-center h-[50px] bg-white max-w-[1250px] mx-auto`}
 
   div {
-    ${tw`max-w-[1370px] mx-auto`}
+    ${tw``}
   }
   > div:first-child {
-    flex-basis: 40%;
+    flex-basis: 42%;
   }
   > div:last-child {
-    flex-basis: 60%;
+    flex-basis: 58%;
   }
 `;
 
@@ -42,17 +43,15 @@ const RightNavigation = styled.div`
 `;
 
 const LinkedInMenuLinks = styled.div`
-  ${tw`flex border-r-[2px] border-gray-200`}
+  ${tw`flex border-r-[2px] border-gray-100 justify-around`}
 
   div:not(:last-child) {
-    padding-right: 46px;
   }
   div:last-child {
-    padding-right: 10px;
   }
 `;
 const RightNavigationDetails = styled.div`
-  ${tw`flex gap-1 items-center pl-5`}
+  ${tw`flex items-center justify-end gap-2`}
 `;
 
 const linkedInLinks = [
@@ -60,6 +59,7 @@ const linkedInLinks = [
     icon: <HiHome />,
     title: "Home",
     circle: true,
+    active: true,
   },
 
   { icon: <HiUsers />, title: "My Network" },
@@ -69,17 +69,27 @@ const linkedInLinks = [
 ];
 
 export const LinkedInNaviagtion = () => {
+  const [formdata, setFormData] = useState("");
+
   return (
     <NavigationContainer>
       <div className="relative">
-        <form className="flex gap-3">
+        <form
+          className="flex gap-3"
+          onSubmit={(e) => {
+            e.preventDefault();
+            setFormData("");
+          }}
+        >
           <BsLinkedin size={40} color="#0072b1" />
           <div className="relative w-full">
             <input
               type="text"
               name=""
+              value={formdata}
+              onChange={(e) => setFormData(e.target.value)}
               id=""
-              className="bg-gray-100 h-[40px] w-[60%] focus:w-[80%] transition-all ease-in-out duration-500  placeholder:text-black placeholder:opacity-50 pl-10 placeholder:text-lg"
+              className="bg-gray-100 h-[40px] w-[60%] focus:w-[80%] transition-all ease-in-out duration-500 placeholder:text-black placeholder:opacity-50 pl-10 placeholder:text-lg focus:bg-blue-50"
               placeholder="search"
             />
             <span className="absolute left-[10px] top-2">
@@ -87,6 +97,8 @@ export const LinkedInNaviagtion = () => {
             </span>
           </div>
         </form>
+
+        {/* <SearchFormModal /> */}
       </div>
 
       <RightNavigation>
@@ -95,32 +107,34 @@ export const LinkedInNaviagtion = () => {
             return (
               <>
                 <div
-                  className="relative flex flex-col gap-1 items-center text-2xl text-gray-500 hover:text-black transition-all ease-in-out duration-500 cursor-pointer"
+                  className={`relative flex flex-col items-center justify-center text-gray-500 hover:text-black transition-all ease-in-out duration-500 cursor-pointer ${
+                    link.active && "underline text-black font-bold"
+                  }`}
                   key={index}
                 >
                   {link.circle ? (
                     <>
-                      {link.icon}
-                      <span className="text-sm font-light">{link.title}</span>
-                      <div className="h-[15px] w-[15px] bg-red-500 rounded-full absolute flex items-center justify-center left-4">
-                        <span className="-mr-[10.2px] h-[8px] w-[8px] bg-white block rounded-full"></span>
+                      <span className="text-2xl">{link.icon}</span>
+                      <span className="text-xs">{link.title}</span>
+                      <div className="h-[12px] w-[12px] bg-red-500 rounded-full absolute left-3 top-[7px] flex items-center justify-center">
+                        <span className="h-[5px] w-[5px] bg-white block rounded-full"></span>
                       </div>
                     </>
                   ) : (
                     <>
-                      {link.icon}
-                      <span className="text-sm font-light">{link.title}</span>
+                      <span className="text-2xl">{link.icon}</span>
+                      <span className="text-xs font-medium">{link.title}</span>
                     </>
                   )}
                 </div>
               </>
             );
           })}
-          <div>
+          <div className="hover:text-black transition-all ease-in-out duration-500 cursor-pointer hover:font-medium">
             <img
-              src="/assets/img/pexel.jpg"
+              src="/assets/img/Bg-hero.png"
               alt="profile image"
-              className="w-[35px] h-[35px] rounded-full"
+              className="w-[30px] h-[30px] rounded-full"
             />
 
             <div className="flex items-center">
@@ -133,7 +147,7 @@ export const LinkedInNaviagtion = () => {
         </LinkedInMenuLinks>
 
         <RightNavigationDetails>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center hover:text-black transition-all ease-in-out duration-500 cursor-pointer hover:font-medium">
             <FcBusiness size={23} />
             <div className="flex items-center">
               <span className="font-light text-sm">For Business</span>
@@ -141,7 +155,7 @@ export const LinkedInNaviagtion = () => {
             </div>
           </div>
 
-          <div className="flex flex-col text-xs gap-1 font-medium text-pink-600 underline">
+          <div className="flex flex-col text-xs font-medium text-pink-500 underline">
             <a href="#">Get Hired Faster</a>
             <a href="#">Try Premium Free</a>
           </div>

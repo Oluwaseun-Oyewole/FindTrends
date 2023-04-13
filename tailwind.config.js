@@ -10,7 +10,8 @@ module.exports = {
 
       backgroundImage: {
         "hero-bg": "url('/public/assets/img/Bg-hero.png')",
-        "pexel-img": "url('/public/assets/img/pexel.jpg')",
+        "pexel-img":
+          "url('/public/assets/img/pexels-tima-miroshnichenko-5380661.jpg')",
       },
 
       colors: {
