@@ -180,12 +180,12 @@ export const Twitter = () => {
             />
           </div>
 
-          <div className="flex justify-between gap-10 mt-4 items-center hover:bg-gray-100 p-3 hover:rounded-full hover:cursor-pointer transition-all ease-in-out duration-500 px-10 py-4">
+          <div className="flex justify-between gap-10 mt-4 items-center hover:bg-gray-100 p-3 hover:rounded-full hover:cursor-pointer transition-all ease-in-out duration-500 px-10 py-4  mb-10">
             <div className="flex gap-2">
               <img
-                src="/assets/img/pexel.jpg"
+                src="/assets/img/pexels-omar-alnahi-18495.jpg"
                 alt=""
-                className="md:w-8 md:h-8 lg:w-12 lg:h-12 xl:w-12 xl:h-10 rounded-full"
+                className="w-8 h-8 lg:w-12 lg:h-12 xl:w-10 xl:h-10 rounded-full"
               />
               <div className="text-sm hidden xl:block">
                 <p>Oluwaseun</p>
