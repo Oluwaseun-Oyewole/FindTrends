@@ -37,6 +37,13 @@ const StartPost = styled.div`
     flex-basis: 95%;
   }
 `;
+const CardInfo = styled.div`
+  ${tw`mt-2 py-3 flex items-center text-2xl gap-2 hover:bg-gray-100 transition-all ease-in-out duration-500 px-3 rounded-lg cursor-pointer`};
+
+  @media screen and (max-width: 350px) {
+    ${tw`hidden`}
+  }
+`;
 
 export const MiddleCard = () => {
   const { handleModalOpening } = useContext(ModalContext);
@@ -61,10 +68,12 @@ export const MiddleCard = () => {
           <div className="flex items-center justify-between">
             {cardinfo?.map((card): any => {
               return (
-                <div className="mt-2 py-3 flex items-center text-2xl gap-2 hover:bg-gray-100 transition-all ease-in-out duration-500 px-3 rounded-lg cursor-pointer">
+                <CardInfo>
                   {card.icon}{" "}
-                  <span className="text-sm text-gray-500">{card.title}</span>
-                </div>
+                  <span className="text-xs md:text-sm text-gray-500">
+                    {card.title}
+                  </span>
+                </CardInfo>
               );
             })}
           </div>
@@ -107,11 +116,13 @@ export const MiddleCard = () => {
             />
             <div>
               <div className="text-sm flex items-center text-gray-400">
-                <p className="text-black">Olúwáṣeun Oyèwọlé</p>
+                <p className="text-sm md:text-base text-black">
+                  Olúwáṣeun Oyèwọlé
+                </p>
                 <BsDot />
-                <p>2nd</p>
+                <p className="text-xs md:text-base">2nd</p>
               </div>
-              <div className="text-gray-500 text-sm py-1 font-medium">
+              <div className="text-gray-500 text-sm py-1 font-medium text-xs md:text-base">
                 <p>Frontend Developer</p>
                 <div className="flex gap-2 items-center">
                   1d . Edited .{" "}
@@ -123,7 +134,7 @@ export const MiddleCard = () => {
             </div>
           </div>
 
-          <div className="text-linkedin flex items-center gap-1 font-bold">
+          <div className="text-linkedin flex items-center gap-1 font-bold text-xs md:text-base">
             <AiOutlinePlus />
             <p>Follow</p>
           </div>
@@ -132,7 +143,7 @@ export const MiddleCard = () => {
         <div className="text-gray-500 text-sm">
           <div className="px-7">
             <p>C# Do's And Don't For Better Coding!</p>
-            <div className="flex items-center justify-between py-3">
+            <div className="flex items-center justify-between py-3 text-xs md:text-sm">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
                 praesentium
@@ -144,8 +155,8 @@ export const MiddleCard = () => {
             </div>
           </div>
 
-          <div className="bg-pexel-img h-[650px] w-full bg-no-repeat bg-center bg-cover"></div>
-          <div className="px-7 py-2 text-sm font-medium flex justify-between font-Quicksand">
+          <div className="bg-pexel-img h-[400px] h-[500px] lg:h-[550px] w-full bg-no-repeat bg-center bg-cover"></div>
+          <div className="px-7 py-2 text-sm font-medium flex justify-between font-Quicksand text-xs md:text-sm">
             <div className="flex items-center gap-2">
               <div className="flex items-center">
                 <AiOutlineLike />
@@ -163,7 +174,7 @@ export const MiddleCard = () => {
             </div>
           </div>
 
-          <div className="mt-3 px-7 py-3 flex justify-between text-lg border-t-2 border-gray-200 relative">
+          <div className="mt-3 px-7 py-3 flex justify-between md:text-lg border-t-2 border-gray-200 relative">
             {/* <div className="absolute bg-red-500 w-[300px] h-[50px] -top-[50px] -left-[20px] rounded-lg">
               Testing
             </div> */}
@@ -218,11 +229,13 @@ export const MiddleCard = () => {
             />
             <div>
               <div className="text-sm flex items-center text-gray-400">
-                <p className="text-black">Olúwáṣeun Oyèwọlé</p>
+                <p className="text-sm md:text-base text-black">
+                  Olúwáṣeun Oyèwọlé
+                </p>
                 <BsDot />
-                <p>2nd</p>
+                <p className="text-xs md:text-base">2nd</p>
               </div>
-              <div className="text-gray-500 text-sm py-1 font-medium">
+              <div className="text-gray-500 text-sm py-1 font-medium text-xs md:text-base">
                 <p>Frontend Developer</p>
                 <div className="flex gap-2 items-center">
                   1d . Edited .{" "}
@@ -234,7 +247,7 @@ export const MiddleCard = () => {
             </div>
           </div>
 
-          <div className="text-linkedin flex items-center gap-1 font-bold">
+          <div className="text-linkedin flex items-center gap-1 font-bold text-xs md:text-base">
             <AiOutlinePlus />
             <p>Follow</p>
           </div>
@@ -243,7 +256,7 @@ export const MiddleCard = () => {
         <div className="text-gray-500 text-sm">
           <div className="px-7">
             <p>C# Do's And Don't For Better Coding!</p>
-            <div className="flex items-center justify-between py-3">
+            <div className="flex items-center justify-between py-3 text-xs md:text-sm">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
                 praesentium
@@ -255,8 +268,8 @@ export const MiddleCard = () => {
             </div>
           </div>
 
-          <div className="bg-pexel-img h-[650px] w-full bg-no-repeat bg-center bg-cover"></div>
-          <div className="px-7 py-2 text-sm font-medium flex justify-between font-Quicksand">
+          <div className="bg-pexel-img h-[400px] h-[500px] lg:h-[550px] w-full bg-no-repeat bg-center bg-cover"></div>
+          <div className="px-7 py-2 text-sm font-medium flex justify-between font-Quicksand text-xs md:text-sm">
             <div className="flex items-center gap-2">
               <div className="flex items-center">
                 <AiOutlineLike />
@@ -274,7 +287,7 @@ export const MiddleCard = () => {
             </div>
           </div>
 
-          <div className="mt-3 px-7 py-3 flex justify-between text-lg border-t-2 border-gray-200 relative">
+          <div className="mt-3 px-7 py-3 flex justify-between md:text-lg border-t-2 border-gray-200 relative">
             {/* <div className="absolute bg-red-500 w-[300px] h-[50px] -top-[50px] -left-[20px] rounded-lg">
               Testing
             </div> */}

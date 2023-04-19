@@ -4,13 +4,13 @@ import tw from "twin.macro";
 import { Container } from "../..";
 
 const BrandsContainer = styled.div`
-  ${tw` py-10 pb-20 flex flex-col items-center justify-center`}
+  ${tw` md:py-10 py-5 md:pb-20 flex flex-col items-center justify-center`}
 `;
 const Brand = styled.div`
   ${tw`bg-white text-black`}
 `;
 const BrandsHeader = styled.h1`
-  ${tw`py-10 text-4xl font-bold`}
+  ${tw`py-5 md:py-10 text-center md:text-left text-2xl md:text-left md:text-4xl font-bold`}
 `;
 
 const TrendHeader = styled.h2`
@@ -21,11 +21,6 @@ export const Brands = () => {
     <Brand>
       <Container>
         <BrandsContainer>
-          {/* <TrendHeader>
-            Findtrend helps you to increase your productivity and reduce your
-            computer's memory load, an application that can fulfill your daily
-            browsing needs.
-          </TrendHeader> */}
           <BrandsHeader>Findtrend make +1000 Startup grow</BrandsHeader>
           <img src="/assets/img/Brands (1).png" alt="" className="w-[55%]" />
         </BrandsContainer>

@@ -11,7 +11,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { Button } from "../../../../components/Button";
 
 const HappeningNowContainer = styled.div`
-  ${tw`pt-5 flex gap-3 w-full pb-2  border-b-[1px] border-gray-200 transition-all ease-in-out duration-500`}
+  ${tw`pt-5 hidden md:flex gap-3 w-full pb-2  border-b-[1px] border-gray-100 transition-all ease-in-out duration-500`}
   >img {
     flex-basis: 8%;
   }
@@ -20,7 +20,7 @@ const HappeningNowContainer = styled.div`
   }
 `;
 const HappeningNowImage = styled.img`
-  ${tw`mt-1 w-[40px] h-[55px] rounded-full `}
+  ${tw`mt-1 w-[50px] h-[45px] lg:w-[40px] lg:h-[55px] rounded-full `}
 `;
 const HappeningNowHeading = styled.h1`
   ${tw` text-xl font-medium text-black`}

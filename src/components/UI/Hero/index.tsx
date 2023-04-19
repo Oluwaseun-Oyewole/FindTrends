@@ -32,7 +32,7 @@ const HeroDesktopImage = styled.img`
 `;
 
 const HeroMobileImage = styled.img`
-  ${tw`lg:hidden`}
+  ${tw`lg:hidden py-3 pb-10`}
 `;
 
 const ButtonImageContainer = styled.div`

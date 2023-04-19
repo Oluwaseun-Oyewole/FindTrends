@@ -15,7 +15,7 @@ const TabContainer = styled.div`
 `;
 
 const TabHeader = styled.h1`
-  ${tw`text-center text-5xl font-[900] pt-20 pb-5`}
+  ${tw`text-center text-2xl pb-2 sm:mb-0 md:text-5xl font-[900] pt-10 md:pt-20`}
 `;
 export const Tab = () => {
   return (
@@ -27,15 +27,13 @@ export const Tab = () => {
           {
             id: 0,
 
-            tabBody: <FaceBook />,
-            tabIcon: <BsFacebook color="#3b5998 " />,
-          },
-
-          {
-            id: 1,
-
             tabBody: <Twitter />,
             tabIcon: <BsTwitter color="#1DA1F2" />,
+          },
+          {
+            id: 1,
+            tabBody: <LinkedInn />,
+            tabIcon: <BsLinkedin color="#0072b1" />,
           },
 
           {
@@ -46,8 +44,9 @@ export const Tab = () => {
 
           {
             id: 3,
-            tabBody: <LinkedInn />,
-            tabIcon: <BsLinkedin color="#0072b1" />,
+
+            tabBody: <FaceBook />,
+            tabIcon: <BsFacebook color="#3b5998 " />,
           },
 
           {

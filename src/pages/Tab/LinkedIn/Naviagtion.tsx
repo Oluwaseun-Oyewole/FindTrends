@@ -15,16 +15,27 @@ const NavigationLink = styled.div`
 `;
 
 const NavigationContainer = styled.div`
-  ${tw`flex items-center h-[50px] bg-white max-w-[1250px] mx-auto`}
+  ${tw`block md:flex items-center h-[50px] bg-white lg:max-w-[1250px] mx-auto bg-gray-200`}
 
-  div {
-    ${tw``}
-  }
   > div:first-child {
     flex-basis: 42%;
   }
   > div:last-child {
     flex-basis: 58%;
+  }
+
+  @media screen and (max-width: 800px) {
+    margin-left: 55px;
+    > div:first-child {
+      flex-basis: 90%;
+    }
+    > div:last-child {
+      ${tw`hidden`}
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    margin-left: 10px;
   }
 `;
 
@@ -40,6 +51,21 @@ const RightNavigation = styled.div`
   > div:last-child {
     flex-basis: 30%;
   }
+
+  @media screen and (max-width: 1024px) {
+    > div:first-child {
+      flex-basis: 100%;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    > div:first-child {
+      display: none;
+    }
+    > div:last-child {
+      dislay: none;
+    }
+  }
 `;
 
 const LinkedInMenuLinks = styled.div`
@@ -52,6 +78,10 @@ const LinkedInMenuLinks = styled.div`
 `;
 const RightNavigationDetails = styled.div`
   ${tw`flex items-center justify-end gap-2`}
+
+  @media screen and (max-width: 1024px) {
+    ${tw`hidden`}
+  }
 `;
 
 const linkedInLinks = [
@@ -89,7 +119,7 @@ export const LinkedInNaviagtion = () => {
               value={formdata}
               onChange={(e) => setFormData(e.target.value)}
               id=""
-              className="bg-gray-100 h-[40px] w-[60%] focus:w-[80%] transition-all ease-in-out duration-500 placeholder:text-black placeholder:opacity-50 pl-10 placeholder:text-lg focus:bg-blue-50"
+              className="bg-gray-100 h-[40px] w-[95%] md:w-full lg:w-[60%] lg:focus:w-[80%] transition-all ease-in-out duration-500 placeholder:text-black placeholder:opacity-50 pl-10 placeholder:text-lg focus:bg-blue-50"
               placeholder="search"
             />
             <span className="absolute left-[10px] top-2">

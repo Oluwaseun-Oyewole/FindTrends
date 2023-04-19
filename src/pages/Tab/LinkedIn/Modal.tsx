@@ -60,9 +60,9 @@ export const Modal = () => {
   };
   return (
     <>
-      <div className="fixed top-0 left-0 min-h-screen w-full bg-black opacity-80 text-white  flex justify-center z-10"></div>
+      <div className="hidden fixed top-0 left-0 min-h-screen w-full bg-black opacity-80 text-white lg:flex justify-center z-10"></div>
 
-      <div className="w-full h-full flex items-center justify-center absolute left-0 z-[1000]">
+      <div className="hidden w-full h-full lg:flex items-center justify-center absolute left-0 z-[1000]">
         <div className="text-black min-h-[70%] w-[50%] bg-white rounded-lg">
           <div className="flex items-center justify-between text-xl pb-3 px-7 py-3">
             <p className=" text-black font-medium">Create a post</p>

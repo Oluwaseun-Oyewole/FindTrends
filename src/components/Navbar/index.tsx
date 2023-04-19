@@ -9,11 +9,15 @@ import { animateScroll } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Nav = styled.div<{ scrollNavbar?: boolean; scrollPast?: boolean }>`
-  ${tw` py-5 font-Quicksand font-medium w-full md:pt-8`}
+  ${tw`py-5 font-Quicksand font-medium w-full md:pt-8`}
   backdrop-filter: ${({ scrollNavbar }) => scrollNavbar && "blur(10px)"};
   position: fixed;
   z-index: 99999;
   background: ${({ scrollPast }) => scrollPast && "#000"};
+
+  @media screen and (max-width: 768px) {
+    ${tw`px-3`}
+  }
 `;
 const NavbarController = styled.div`
   ${tw`flex justify-between items-center`}

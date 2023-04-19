@@ -30,6 +30,23 @@ const TwitterContainer = styled.div`
     padding-left: 20px;
     padding-right: 20px;
   }
+  @media screen and (max-width: 1024px) {
+    > div:nth-child(1) {
+      flex-basis: 15%;
+    }
+    > div:nth-child(2) {
+      flex-basis: 85%;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    > div:nth-child(1) {
+      ${tw`hidden`}
+    }
+    > div:nth-child(2) {
+      flex-basis: 100%;
+    }
+  }
 `;
 
 const SidebarHorizontal = styled.div`
@@ -55,6 +72,15 @@ const HomeSearch = styled.div`
   height: 100vh;
   overflow-y: scroll;
   white-space: wrap;
+
+  @media screen and (max-width: 768px) {
+    > div:first-child {
+      flex-basis: 100%;
+    }
+    > div:last-child {
+      ${tw`hidden`}
+    }
+  }
 `;
 
 const twitterdata = [
@@ -125,11 +151,13 @@ export const Twitter = () => {
                     {topCircle ? (
                       <>
                         <div className="bg-blue-500 h-2 w-2 rounded-full absolute top-3 left-10"></div>
-                        {icon} <span>{title}</span>
+                        <span className="text-2xl">{icon}</span>{" "}
+                        <span className="hidden xl:block">{title}</span>
                       </>
                     ) : (
                       <>
-                        {icon} <span>{title}</span>
+                        <span className="text-2xl"> {icon} </span>
+                        <span className="hidden xl:block">{title}</span>
                       </>
                     )}
                   </div>
@@ -137,7 +165,7 @@ export const Twitter = () => {
               }
             )}
           </div>
-          <div className="pt-5">
+          <div className="pt-5 hidden xl:block">
             <Button
               children="Tweet"
               onClick={() => null}
@@ -154,15 +182,15 @@ export const Twitter = () => {
               <img
                 src="/assets/img/pexel.jpg"
                 alt=""
-                className="w-10 h-10 rounded-full"
+                className="md:w-8 md:h-8 lg:w-12 lg:h-12 xl:w-12 xl:h-10 rounded-full"
               />
-              <div className="text-sm">
+              <div className="text-sm hidden xl:block">
                 <p>Oluwaseun</p>
                 <p className="text-body text-xs">@_justcode21</p>
               </div>
             </div>
 
-            <div className="cursor-pointer">
+            <div className="cursor-pointer hidden xl:block">
               <FiMoreHorizontal />
             </div>
           </div>
@@ -193,6 +221,7 @@ export const Twitter = () => {
               className={`h-[120px] bg-white z-10 sticky top-0`}
               heading="Home"
               scroll={scroll}
+              isMobile={true}
             />
           </div>
           <div>

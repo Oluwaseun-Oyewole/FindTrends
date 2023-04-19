@@ -12,28 +12,60 @@ const TwitterCardContainer = styled.div`
 `;
 const TwitterCardHeading = styled.h1`
   ${tw`font-bold text-black`}
+
+  @media screen and (max-width:400px) {
+    ${tw`text-xs`}
+  }
 `;
-const TwitterCardLink = styled.div``;
+const TwitterCardLink = styled.div`
+  @media screen and (max-width: 400px) {
+    ${tw`text-xs`}
+  }
+`;
 const TwitterCardLinks = styled.div`
   ${tw`pt-1 pb-3 text-twitter`}
+
+  @media screen and (max-width:400px) {
+    ${tw`text-xs`}
+  }
 `;
 const TwitterImage = styled.img`
-  ${tw`w-[45px] h-[40px] rounded-full`}
+  ${tw`w-[130px] h-[50px] md:w-[45px] md:h-[40px] rounded-full`}
+
+  @media screen and (max-width:768px) {
+    ${tw`w-[45px] h-[33px]`}
+  }
+
+  @media screen and (max-width: 500px) {
+    ${tw`w-[100px] h-[45px]`}
+  }
+
+  @media screen and (max-width: 400px) {
+    ${tw`w-[100px] h-[37px]`}
+  }
 `;
 
 const TwitterCardDescription = styled.p`
   ${tw`text-sm py-2 text-black`}
+
+  @media screen and (max-width:400px) {
+    ${tw`text-sm`}
+  }
 `;
 const TwitterLink = styled.p``;
 const TwitterParagraph = styled.p`
   ${tw`text-black text-sm pb-2`}
+
+  @media screen and (max-width:400px) {
+    ${tw`text-sm`}
+  }
 `;
 const TwitterCardContent = styled.div`
   ${tw``}
 `;
 
 const Twitter = styled.div`
-  ${tw`flex gap-5 border-b-[1px] border-gray-200 pt-3 hover:bg-gray-100 cursor-pointer transition-all duration-500 ease-in-out relative`}
+  ${tw`flex gap-3 lg:gap-5 border-b-[1px] border-gray-200 pt-3 hover:bg-gray-100 cursor-pointer transition-all duration-500 ease-in-out relative`}
 `;
 
 const TwitterHeaderFlex = styled.div`
@@ -45,7 +77,7 @@ const TwitterHeaderFlexContainer = styled.div`
 `;
 
 const TweetDetails = styled.div`
-  ${tw`py-2 flex justify-between w-[80%]`}
+  ${tw`py-2 flex justify-between md:w-[80%]`}
   div > span {
     font-size: 13px;
   }
@@ -77,10 +109,18 @@ const TweetDetails = styled.div`
     > span:last-child {
     }
   }
+
+  @media screen and (max-width: 400px) {
+    ${tw`text-xs`}
+  }
 `;
 
 const TweetDetail = styled.div`
-  ${tw`flex items-center gap-3 cursor-pointer`}
+  ${tw`flex items-center md:gap-3 cursor-pointer`}
+
+  @media screen and (max-width:400px) {
+    ${tw`text-xs`}
+  }
 `;
 export const TwitterCard = ({ details }: any) => {
   const [showModal, setShowModal] = useState(false);
@@ -112,7 +152,7 @@ export const TwitterCard = ({ details }: any) => {
           return (
             <Twitter>
               <TwitterImage
-                src="/assets//img/pexel.jpg"
+                src="/assets/img/pexels-tima-miroshnichenko-5380661.jpg"
                 onMouseEnter={() => {
                   handleShowModal();
                 }}

@@ -18,18 +18,33 @@ const BenefitCard = styled.div`
 
 const DealContent = styled.div`
   > div:first-child {
-    // display: none;
   }
 `;
 
 const DealContainer = styled.div`
   > div:first-child {
-    // display: none;
   }
 `;
+
+const CardParent = styled.div`
+  ${tw`mt-8 mb-12 md:mb-0 grid md:grid-cols-2 lg:grid-cols-3 gap-5`}
+
+  @media screen and (max-width:768px) {
+    // ${tw`w-[80%]`}
+  }
+
+  @media screen and (max-width: 400px) {
+    ${tw`w-[100%]`}
+  }
+
+  @media screen and (max-width: 500px) {
+    ${tw`w-[90%]`}
+  }
+`;
+
 export const Card = ({ click }: any) => {
   return (
-    <div className=" mt-8 grid grid-cols-3 gap-5">
+    <CardParent>
       {dealsdata?.map((item: any, index: number) => {
         return (
           <Tilt>
@@ -92,19 +107,20 @@ export const Card = ({ click }: any) => {
                     );
                   })}
                 </div>
-
-                <Button
-                  children="Start Free Trial"
-                  padding={true}
-                  paddingvalues="12px 60px"
-                  background={item.primary ? "#000" : "#A8FF35"}
-                  color={item.primary ? "#fff" : "#000"}
-                />
+                <div className="flex items-cnter ">
+                  <Button
+                    children="Start Free Trial"
+                    padding={true}
+                    paddingvalues="12px 60px"
+                    background={item.primary ? "#000" : "#A8FF35"}
+                    color={item.primary ? "#fff" : "#000"}
+                  />
+                </div>
               </DealContent>
             </DealContainer>
           </Tilt>
         );
       })}
-    </div>
+    </CardParent>
   );
 };

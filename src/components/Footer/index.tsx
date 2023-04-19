@@ -6,13 +6,16 @@ import { Link } from "react-router-dom";
 import { footerlinks, footerProp } from "../../utils/data";
 
 const FooterContainer = styled.div`
-  ${tw`flex items-center justify-between font-bold`}
+  ${tw`flex-col md:flex-row flex items-center justify-between font-bold `}
+  @media screen and (max-width: 768px) {
+    ${tw`px-3`}
+  }
 `;
 const FooterParent = styled.div`
-  ${tw`py-8 bg-white shadow-xl text-black font-medium font-satoshi`}
+  ${tw`pt-16 md:py-8 bg-white shadow-xl text-black font-medium font-satoshi`}
 `;
 const FooterMenuLinks = styled.ul`
-  ${tw`list-none flex gap-10`}
+  ${tw`my-10 md:my-0 list-none text-center md:text-start flex gap-6  md:gap-10 flex-col md:flex-row`}
 `;
 const FooterLinks = styled.li``;
 const FooterLink = styled(Link);

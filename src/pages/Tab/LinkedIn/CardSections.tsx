@@ -25,6 +25,36 @@ const CardContainer = styled.div`
   > div:nth-child(3) {
     flex-basis: 30%;
   }
+
+  @media screen and (max-width: 1024px) {
+    > div:nth-child(1) {
+      // display: none;
+      flex-basbs: 20%;
+    }
+
+    > div:nth-child(2) {
+      // display: none;
+      flex-basis: 80%;
+    }
+
+    > div:nth-child(3) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    > div:nth-child(1) {
+      display: none;
+    }
+
+    > div:nth-child(2) {
+      flex-basis: 80%;
+    }
+
+    > div:nth-child(3) {
+      display: none;
+    }
+  }
 `;
 export const CardSections = () => {
   const { handleModalOpening } = useContext(ModalContext);
@@ -32,7 +62,7 @@ export const CardSections = () => {
     <CardContainer className="max-w-[1250px] mx-auto">
       <LeftSection />
       <MiddleCard />
-      <RightSection/>
+      <RightSection />
     </CardContainer>
   );
 };
