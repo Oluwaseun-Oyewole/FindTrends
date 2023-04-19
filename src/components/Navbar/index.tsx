@@ -98,14 +98,7 @@ export const Navbar = () => {
             {navigationData?.map(({ pathname, title }, index): any => {
               return (
                 <NavbarItem key={index}>
-                  <NavLink
-                    to={{ pathname }}
-                    className={({ isActive }) =>
-                      isActive ? "text-red-500" : ""
-                    }
-                  >
-                    {title}
-                  </NavLink>
+                  <NavLink to={{ pathname }}>{title}</NavLink>
                 </NavbarItem>
               );
             })}
@@ -141,14 +134,7 @@ export const Navbar = () => {
             {navigationData?.map(({ pathname, title }, index): any => {
               return (
                 <NavbarMobileItem key={index}>
-                  <NavLink
-                    to={{ pathname }}
-                    className={({ isActive }) =>
-                      isActive ? "text-red-500" : ""
-                    }
-                  >
-                    {title}
-                  </NavLink>
+                  <NavLink to={{ pathname }}>{title}</NavLink>
                 </NavbarMobileItem>
               );
             })}

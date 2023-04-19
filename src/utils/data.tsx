@@ -4,11 +4,11 @@ export interface Navigation {
 }
 
 export const navigationData: Array<Navigation> = [
-  { pathname: "/about", title: "About" },
-  { pathname: "/howitwork", title: "How it work" },
-  { pathname: "/pricing", title: "Pricing" },
-  { pathname: "/solution", title: "Solution" },
-  { pathname: "/features", title: "Features" },
+  { pathname: "/", title: "About" },
+  { pathname: "/", title: "How it work" },
+  { pathname: "/", title: "Pricing" },
+  { pathname: "/", title: "Solution" },
+  { pathname: "/", title: "Features" },
 ];
 
 export const dealsdata = [
