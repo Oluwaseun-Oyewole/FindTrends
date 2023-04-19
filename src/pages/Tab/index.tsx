@@ -11,11 +11,11 @@ import { BsFacebook, BsTwitter, BsPinterest, BsLinkedin } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 
 const TabContainer = styled.div`
-  ${tw`bg-gray-50 text-black font-satoshi font-medium pb-20`}
+  ${tw`bg-gray-50 text-black font-satoshi font-medium mb-10`}
 `;
 
 const TabHeader = styled.h1`
-  ${tw`text-center text-2xl pb-2 sm:mb-0 md:text-5xl font-[900] pt-10 md:pt-20`}
+  ${tw`text-center text-xl pb-2 sm:mb-0 md:text-5xl font-[900] pt-5 md:pt-14`}
 `;
 export const Tab = () => {
   return (

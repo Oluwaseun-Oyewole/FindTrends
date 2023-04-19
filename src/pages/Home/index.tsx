@@ -7,13 +7,13 @@ import { JoinUs } from "../../components/UI/Join";
 import { Brands } from "../../components/UI/Brands";
 export const Home = () => {
   return (
-    <>
+    <div className="">
       <Hero />
       <SectionTab />
       <Brands />
       <Tab />
       <Deals />
       <JoinUs />
-    </>
+    </div>
   );
 };

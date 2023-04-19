@@ -13,9 +13,10 @@ type props = {
   icon?: React.ReactElement;
   padding?: boolean;
   fontWeight?: number;
-  fontSize?: boolean;
+  fontSize?: number;
   paddingvalues?: string;
-  opacity?: boolean;
+  opacity?: number;
+  isMobile?: boolean;
 };
 
 const ButtonStyles = styled.button<{
@@ -24,9 +25,10 @@ const ButtonStyles = styled.button<{
   padding?: boolean;
   icon?: React.ReactElement;
   fontWeight?: number;
-  fontSize?: boolean;
+  fontSize?: number;
   paddingvalues?: string;
-  opacity?: boolean;
+  opacity?: number;
+  isMobile?: boolean;
 }>`
   background: ${({ background }) => (background ? background : "#1E1E1E")};
   border-radius: 30px;
@@ -45,6 +47,14 @@ const ButtonStyles = styled.button<{
     padding ? `${paddingvalues}` : " 10px 30px"};
   opacity: ${({ opacity }) => (opacity ? `0.5` : "")};
   font-size: ${({ fontSize }) => (fontSize ? "20px" : "15px")};
+
+  @media screen and (max-width: 768px) {
+    font-size: ${({ isMobile }) => isMobile && "15px"};
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: ${({ isMobile }) => isMobile && "13px"};
+  }
 `;
 
 export const Button: FC<props> = ({
@@ -59,6 +69,7 @@ export const Button: FC<props> = ({
   fontSize,
   paddingvalues,
   opacity,
+  isMobile,
 }) => {
   return (
     <ButtonStyles
@@ -72,6 +83,7 @@ export const Button: FC<props> = ({
       fontSize={fontSize}
       paddingvalues={paddingvalues}
       opacity={opacity}
+      isMobile={isMobile}
     >
       {children} {icon}
     </ButtonStyles>

@@ -73,7 +73,7 @@ export const CustomTabComponent = ({
           <TwitterTabMenu>
             {tabs?.map(({ tabTitle }, index): any => {
               return (
-                <>
+                <div key={index}>
                   {tabTitle && (
                     <>
                       <TwitterTabLink key={index}>
@@ -89,7 +89,7 @@ export const CustomTabComponent = ({
                       </TwitterTabLink>
                     </>
                   )}
-                </>
+                </div>
               );
             })}
           </TwitterTabMenu>
@@ -98,7 +98,7 @@ export const CustomTabComponent = ({
         <TabNavMenu>
           {tabs?.map(({ tabTitle, tabIcon }, index): any => {
             return (
-              <>
+              <div key={index}>
                 {!tabTitle && (
                   <>
                     <TabNavLink
@@ -113,7 +113,7 @@ export const CustomTabComponent = ({
                     </TabNavLink>
                   </>
                 )}
-              </>
+              </div>
             );
           })}
         </TabNavMenu>

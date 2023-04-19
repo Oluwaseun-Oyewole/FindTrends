@@ -10,20 +10,28 @@ const HeroParent = styled.div`
 `;
 
 const HeroContainer = styled.div`
-  ${tw`pt-14 flex flex-col items-center justify-center gap-[50px] lg:gap-[65px] md:pb-14`}
+  ${tw` pt-10 md:pt-14 flex flex-col items-center justify-center gap-[50px] lg:gap-[65px] md:pb-14`}
 `;
 const HeroContent = styled.div`
   ${tw`flex flex-col items-center justify-center`}
 `;
 const HeroContentHeading = styled.h1`
-  ${tw`text-3xl md:text-5xl lg:text-7xl py-4 font-[900] tracking-wide`}
+  ${tw`text-4xl md:text-5xl lg:text-7xl pb-3 md:py-4 font-[900] tracking-wide`}
+
+  @media screen and (max-width: 376px) {
+    ${tw`text-3xl`}
+  }
 `;
 const HeroContentHading2 = styled.h2`
   ${tw`text-3xl md:text-5xl lg:text-6xl font-extrabold pb-5 tracking-wide`}
 `;
 
 const HeroContentParagraph = styled.p`
-  ${tw`text-body font-medium w-[95%] md:w-[70%] lg:w-[58%] pt-2 pb-8 text-center lg:text-start font-Quicksand`}
+  ${tw`text-body font-medium w-[95%] md:w-[70%] lg:w-[58%] pt-2 pb-8 text-center lg:text-start font-Quicksand `}
+
+  @media screen and (max-width: 376px) {
+    ${tw`w-[98%] text-sm`}
+  }
 `;
 
 const HeroImageContainer = styled.div``;
@@ -66,7 +74,8 @@ export const Hero = () => {
                 fontWeight={900}
                 padding={true}
                 paddingvalues="14px 35px"
-                fontSize={true}
+                fontSize={20}
+                isMobile={true}
               />
               <ButtonImage src="/assets/img/img-hero.png" alt="button image" />
             </ButtonImageContainer>

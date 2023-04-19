@@ -4,7 +4,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 const SectionTabContainer = styled.div`
-  ${tw`py-5 md:py-10 font-medium bg-secondary`}
+  ${tw`py-5 font-medium bg-secondary`}
 `;
 const SectionContainer = styled.div`
   ${tw`md:pt-7 flex items-center justify-center text-center`}
@@ -17,7 +17,7 @@ const SectionContent = styled.div`
   ${tw`py-8 md:py-14 flex items-center justify-center md:gap-5`}
 `;
 const SectionImageContainer = styled.div`
-  ${tw`bg-white rounded-lg h-[120px] w-[200px] md:h-[170px] md:w-[400px] flex items-center justify-center px-10 `}
+  ${tw`bg-white rounded-lg h-[120px] w-[280px] md:h-[170px] md:w-[400px] flex items-center justify-center px-10 `}
 `;
 const SectionImage = styled.img``;
 const SectionParagraphContainer = styled.div`
@@ -35,11 +35,19 @@ export const SectionTab = () => {
             <SectionTabHeader>Open new tabs is sh*t</SectionTabHeader>
 
             <SectionContent>
-              <img src="/assets/img/Group 427321657.png" alt="" />
+              <img
+                src="/assets/img/Group 427321657.png"
+                alt=""
+                className="hidden md:block"
+              />
               <SectionImageContainer>
                 <SectionImage src="/assets/img/Group 15.png" />
               </SectionImageContainer>
-              <img src="/assets/img/Group 427321665.png" alt="" />
+              <img
+                src="/assets/img/Group 427321665.png"
+                alt=""
+                className="hidden md:block"
+              />
             </SectionContent>
 
             <SectionParagraphContainer>

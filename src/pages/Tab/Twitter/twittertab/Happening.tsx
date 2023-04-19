@@ -110,7 +110,7 @@ export const HappeningNow = () => {
               background="#1DA1F2"
               padding={true}
               paddingvalues="6px 23px"
-              opacity={true}
+              opacity={0.5}
             />
           </MediaContainer>
         </HappeningNowContent>

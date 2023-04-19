@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { FiMoreHorizontal, FiMessageCircle } from "react-icons/fi";
@@ -6,6 +6,7 @@ import { AiOutlineRetweet } from "react-icons/ai";
 import { BiLike } from "react-icons/bi";
 import { MdViewCompact } from "react-icons/md";
 import { BsFillShareFill } from "react-icons/bs";
+import { ContextProvider } from "../../../../components/context/ContextProvider";
 
 const TwitterCardContainer = styled.div`
   ${tw`pt-4`}
@@ -123,7 +124,7 @@ const TweetDetail = styled.div`
   }
 `;
 export const TwitterCard = ({ details }: any) => {
-  const [showModal, setShowModal] = useState(false);
+  const { handleModalOpen, removeModal }: any = useContext(ContextProvider);
 
   return (
     <TwitterCardContainer>
@@ -141,21 +142,11 @@ export const TwitterCard = ({ details }: any) => {
           }: any,
           index: any
         ) => {
-          const handleShowModal = () => {
-            if (id === index) {
-              setShowModal(false);
-            } else {
-              setShowModal(false);
-            }
-          };
-
           return (
-            <Twitter>
+            <Twitter onMouseEnter={removeModal} key={index}>
               <TwitterImage
                 src="/assets/img/pexels-tima-miroshnichenko-5380661.jpg"
-                onMouseEnter={() => {
-                  handleShowModal();
-                }}
+                onMouseEnter={handleModalOpen}
               />
 
               <TwitterCardContent>
@@ -175,7 +166,7 @@ export const TwitterCard = ({ details }: any) => {
                 <TwitterCardDescription>{description}</TwitterCardDescription>
                 {links?.map((data: any, index: any) => {
                   return (
-                    <>
+                    <div key={index}>
                       <TwitterCardLinks>
                         <TwitterLink>{data.link}</TwitterLink>
 
@@ -183,7 +174,7 @@ export const TwitterCard = ({ details }: any) => {
 
                         <TwitterLink>{data.link2}</TwitterLink>
                       </TwitterCardLinks>
-                    </>
+                    </div>
                   );
                 })}
                 <TwitterParagraph>{content}</TwitterParagraph>
@@ -224,43 +215,6 @@ export const TwitterCard = ({ details }: any) => {
                   </TweetDetail>
                 </TweetDetails>
               </TwitterCardContent>
-
-              {showModal && id === index && (
-                <div className="p-5 card absolute bg-white shadow-2xl min-h-[270px] w-[320px] top-[300px] left-[250px] z-10 rounded-xl hover:bg-gray-100 cursor-pointer transition-all duration-500 ease-in-out">
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <img
-                        src="/assets/img/pexel.jpg"
-                        alt=""
-                        className="w-[50px] rounded-full h-[50px] "
-                      />
-                      <h1 className="border-2 border-gray-200 px-5 py-1 text-black text-sm rounded-3xl">
-                        Following
-                      </h1>
-                    </div>
-                    <p className="font-bold text-black">Da Vinci of Design</p>
-                    <p className="text-sm">@Mercee__</p>
-                    <p className="py-3 text-sm">
-                      Product Designer @getallvapp || Crafting purposeful design
-                      that elevates user experience
-                    </p>
-
-                    <div className="flex items-center justify-between text-xs">
-                      <p>350 Following</p>
-                      <p>3000 Followers</p>
-                    </div>
-
-                    <div className="pt-4 flex gap-2 items-center">
-                      <img
-                        src="/assets/img/pexel.jpg"
-                        alt=""
-                        className="w-[30px] rounded-full h-[30px] "
-                      />
-                      <p className="text-sm">Followed by Seun Oyewole</p>
-                    </div>
-                  </div>
-                </div>
-              )}
             </Twitter>
           );
         }

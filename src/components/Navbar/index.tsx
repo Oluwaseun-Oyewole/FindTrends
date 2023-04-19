@@ -16,7 +16,7 @@ const Nav = styled.div<{ scrollNavbar?: boolean; scrollPast?: boolean }>`
   background: ${({ scrollPast }) => scrollPast && "#000"};
 
   @media screen and (max-width: 768px) {
-    ${tw`px-3`}
+    ${tw``}
   }
 `;
 const NavbarController = styled.div`

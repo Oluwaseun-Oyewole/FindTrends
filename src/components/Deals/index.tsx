@@ -5,7 +5,7 @@ import { Container } from "..";
 import { Card } from "./Card";
 
 const DealContainer = styled.div`
-  ${tw`pt-10 md:pt-28 flex flex-col items-center justify-center`}
+  ${tw`md:pt-10 flex flex-col items-center justify-center`}
 `;
 const DealParentComponent = styled.div`
   ${tw`font-satoshi font-medium  bg-black `}

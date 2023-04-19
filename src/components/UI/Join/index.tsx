@@ -5,16 +5,16 @@ import { Button } from "../../Button";
 import { Container } from "../..";
 
 const JoinHeading = styled.h1`
-  ${tw`md:py-3 text-xl md:text-5xl font-bold`}
+  ${tw`md:py-3 text-xl md:text-4xl font-bold`}
 `;
 const JoinHeading2 = styled.h2`
-  ${tw`md:pt-2 pb-4 md:pb-10 text-2xl md:text-6xl opacity-30 font-bold`}
+  ${tw`md:pt-2 pb-4 md:pb-10 text-2xl md:text-4xl lg:text-5xl opacity-30 font-bold`}
 `;
 const JoinContainer = styled.div`
   ${tw`flex flex-col items-center justify-center`}
 `;
 const Join = styled.div`
-  ${tw`md:mt-20 py-10 md:py-32 bg-secondary text-black`}
+  ${tw`md:mt-20 py-10 md:py-12 lg:py-16 bg-secondary text-black`}
 `;
 export const JoinUs = () => {
   return (

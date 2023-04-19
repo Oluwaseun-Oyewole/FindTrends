@@ -103,7 +103,7 @@ export const Modal = () => {
               </span>
 
               <div className="flex gap-2 py-5 ">
-                {cardinfo?.map((card): any => {
+                {cardinfo?.map((card, index): any => {
                   return (
                     <>
                       <div
@@ -111,6 +111,7 @@ export const Modal = () => {
                         style={{
                           background: card.background,
                         }}
+                        key={index}
                       >
                         <div className="text-xl">
                           <span

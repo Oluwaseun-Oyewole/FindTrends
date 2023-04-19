@@ -8,7 +8,7 @@ import { dealsdata } from "../../utils/data";
 const BenefitCard = styled.div`
   ${tw`flex flex-col gap-4 text-sm`}
   > p {
-    ${tw`flex items-center gap-2 font-medium `}
+    ${tw`flex items-center gap-2 font-medium text-xs md:text-base `}
   }
 
   > div:first-child {
@@ -30,7 +30,6 @@ const CardParent = styled.div`
   ${tw`mt-8 mb-12 md:mb-0 grid md:grid-cols-2 lg:grid-cols-3 gap-5`}
 
   @media screen and (max-width:768px) {
-    // ${tw`w-[80%]`}
   }
 
   @media screen and (max-width: 400px) {
@@ -47,34 +46,34 @@ export const Card = ({ click }: any) => {
     <CardParent>
       {dealsdata?.map((item: any, index: number) => {
         return (
-          <Tilt>
+          <Tilt key={index}>
             <DealContainer>
               <DealContent
                 className={`${
                   item.primary ? "bg-secondary" : "bg-white"
-                } text-black p-7 rounded-lg cursor-pointer`}
+                } text-black p-4 md:p-7 rounded-lg cursor-pointer`}
               >
                 <div
-                  className={`py-4 border-b-2 ${
+                  className={`py-2 md:py-4 border-b-2 ${
                     item.primary ? "border-gray-500" : "border-gray-100"
                   }`}
                 >
-                  <h2 className="text-2xl font-bold">{item.dealtype}</h2>
+                  <h2 className="md:text-2xl font-bold">{item.dealtype}</h2>
                   <p className="text-black font-bold text-sm py-1">
                     {item.dealdescription}
                   </p>
                 </div>
 
-                <div className="py-6 text-4xl font-bold">
+                <div className="py-2 md:py-6 text-2xl md:text-4xl font-bold">
                   {item.dealamount}
                   <span className="text-sm pl-2">/ Month</span>
                 </div>
 
-                <div className="h-[200px]">
+                <div className="md:h-[200px]">
                   {/* <BsCheckLg /> */}
                   {item.dealbenefits?.map((deal: any, index: number) => {
                     return (
-                      <BenefitCard>
+                      <BenefitCard key={index}>
                         <p>
                           <BsCheckLg />
                           {deal.benefit}
@@ -107,7 +106,7 @@ export const Card = ({ click }: any) => {
                     );
                   })}
                 </div>
-                <div className="flex items-cnter ">
+                <div className="flex items-cnter pt-4 md:pt-0">
                   <Button
                     children="Start Free Trial"
                     padding={true}

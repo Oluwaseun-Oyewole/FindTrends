@@ -66,9 +66,9 @@ export const MiddleCard = () => {
             </div>
           </StartPost>
           <div className="flex items-center justify-between">
-            {cardinfo?.map((card): any => {
+            {cardinfo?.map((card, index): any => {
               return (
-                <CardInfo>
+                <CardInfo key={index}>
                   {card.icon}{" "}
                   <span className="text-xs md:text-sm text-gray-500">
                     {card.title}

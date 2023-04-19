@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { BsTwitter } from "react-icons/bs";
@@ -13,6 +13,7 @@ import { RiHome7Fill, RiMessage2Line } from "react-icons/ri";
 import { CustomTabComponent } from "../../../components/Tab";
 import { ForYou } from "./twittertab/ForYou";
 import { SearchTrend } from "./Search";
+import { ContextProvider } from "../../../components/context/ContextProvider";
 
 const TwitterContainer = styled.div`
   ${tw`flex min-h-[100vh] relative`}
@@ -130,6 +131,8 @@ const twitterdata = [
 export const Twitter = () => {
   const [scroll, setScroll] = useState(true);
 
+  const { show }: any = useContext(ContextProvider);
+
   return (
     <div className="w-full">
       <TwitterContainer>
@@ -172,8 +175,8 @@ export const Twitter = () => {
               background="#1DA1F2"
               padding={true}
               paddingvalues="12px 80px"
-              opacity={false}
-              fontSize={true}
+              opacity={0.5}
+              fontSize={20}
             />
           </div>
 
@@ -194,6 +197,40 @@ export const Twitter = () => {
               <FiMoreHorizontal />
             </div>
           </div>
+
+          {show && (
+            <div className="p-5 card absolute bg-white shadow-2xl min-h-[270px] w-[320px] top-[300px] left-[150px] z-10 rounded-xl hover:bg-gray-100 cursor-pointer transition-all duration-500 ease-in-out">
+              <div>
+                <div className="flex items-center justify-between">
+                  <img
+                    src="/assets/img/pexel.jpg"
+                    alt=""
+                    className="w-[50px] rounded-full h-[50px]"
+                  />
+                  <h1 className="border-2 border-gray-200 px-5 py-1 text-black text-sm rounded-3xl">
+                    Following
+                  </h1>
+                </div>
+                <p className="font-bold text-black">Da Vinci of Design</p>
+                <p className="text-sm">@Mercee__</p>
+                <p className="py-3 text-sm">Product Designer @getallvapp</p>
+
+                <div className="flex items-center justify-between text-xs">
+                  <p>350 Following</p>
+                  <p>3000 Followers</p>
+                </div>
+
+                <div className="pt-4 flex gap-2 items-center">
+                  <img
+                    src="/assets/img/pexel.jpg"
+                    alt=""
+                    className="w-[30px] rounded-full h-[30px] "
+                  />
+                  <p className="text-sm">Followed by Seun Oyewole</p>
+                </div>
+              </div>
+            </div>
+          )}
         </SidebarHorizontal>
 
         <HomeSearch>
